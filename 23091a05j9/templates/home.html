@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Waters - Flood Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="glass-container">
+        <header>
+            <h1 class="glow-text">Rising Waters</h1>
+            <p class="subtitle">Machine Learning-Powered Flood Prediction</p>
+        </header>
+        
+        <main class="content">
+            <section class="info-section">
+                <p>
+                    Rising Waters focuses on addressing the growing risk of floods, which have become increasingly frequent and severe due to climate change, rapid urbanization, and unpredictable weather patterns. 
+                </p>
+                <p>
+                    By leveraging advanced machine learning algorithms like XGBoost on historical weather data, this system enables disaster management authorities and local communities to detect potential flood risks proactively, ensuring early warnings and effective resource allocation.
+                </p>
+            </section>
+
+            <div class="action-container">
+                <a href="{{ url_for('predict') }}" class="btn-primary pulse">Predict Floods</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Rising Waters Initiative. Protecting lives through data.</p>
+        </footer>
+    </div>
+</body>
+</html>

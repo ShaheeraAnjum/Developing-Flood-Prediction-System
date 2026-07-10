@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Flood Risk - Rising Waters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="glass-container form-container">
+        <header>
+            <h1 class="glow-text">Analyze Meteorological Data</h1>
+            <p class="subtitle">Enter the required weather parameters below</p>
+        </header>
+        
+        <main>
+            <form action="{{ url_for('predict') }}" method="POST" class="prediction-form" id="predictionForm">
+                
+                <div class="input-group">
+                    <label for="annual_rainfall">Annual Rainfall (mm)</label>
+                    <input type="number" step="any" id="annual_rainfall" name="annual_rainfall" placeholder="e.g. 1200" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="cloud_visibility">Cloud Visibility</label>
+                    <input type="number" step="any" id="cloud_visibility" name="cloud_visibility" placeholder="e.g. 4.5" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="seasonal_rainfall">Seasonal Rainfall (mm)</label>
+                    <input type="number" step="any" id="seasonal_rainfall" name="seasonal_rainfall" placeholder="e.g. 800" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="temperature">Temperature (°C)</label>
+                    <input type="number" step="any" id="temperature" name="temperature" placeholder="e.g. 28.5" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="humidity">Humidity (%)</label>
+                    <input type="number" step="any" id="humidity" name="humidity" placeholder="e.g. 85" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Analysis</button>
+                <a href="{{ url_for('home') }}" class="btn-secondary">Back to Home</a>
+            </form>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

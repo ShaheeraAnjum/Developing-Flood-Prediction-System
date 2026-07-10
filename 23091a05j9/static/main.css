@@ -1,0 +1,202 @@
+:root {
+    --bg-color: #0b0f19;
+    --text-color: #f1f5f9;
+    --primary-color: #00d2ff;
+    --primary-hover: #00a3cc;
+    --alert-color: #ef4444;
+    --safe-color: #10b981;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-color);
+    background-image: radial-gradient(circle at 15% 50%, rgba(0, 210, 255, 0.1), transparent 25%),
+                      radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.1), transparent 25%);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.form-container {
+    max-width: 500px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.glow-text {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.info-section {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    color: #cbd5e1;
+}
+
+.info-section p {
+    margin-bottom: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #3a7bd5);
+    color: #fff;
+    box-shadow: 0 10px 20px -10px rgba(0, 210, 255, 0.5);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -10px rgba(0, 210, 255, 0.7);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Form Styles */
+.prediction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+.prediction-form .btn-primary {
+    width: 100%;
+    margin-top: 1rem;
+}
+.prediction-form .btn-secondary {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+}
+
+/* Result Pages */
+.result-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.alert-bg {
+    background-image: radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.15), transparent 60%);
+}
+
+.safe-bg {
+    background-image: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15), transparent 60%);
+}
+
+.alert-text {
+    color: var(--alert-color);
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.safe-text {
+    color: var(--safe-color);
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
